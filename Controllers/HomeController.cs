@@ -40,7 +40,7 @@ public class HomeController : Controller
             _context.Add(newUser);
             _context.SaveChanges();
             HttpContext.Session.SetInt32("user", newUser.UserID);
-            return RedirectToAction ("Success");
+            return RedirectToAction ("Login");
         } else {
             return View ("Index");
         }
@@ -75,7 +75,7 @@ public class HomeController : Controller
                 return View ("Login");
             } else {
                 HttpContext.Session.SetInt32("user", userInDb.UserID);
-                return RedirectToAction("Login");
+                return RedirectToAction("Success");
             }
             
         }
