@@ -1,0 +1,32 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model LogUser
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between row">
+        <div>
+            <h2>Login to this Cool Site!</h2>
+        </div>
+        <div><a href="/" class="btn btn-info btn-outline-dark">Register</a>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <form action="/user/login" method="post">
+            <div class="form-group">
+                    <label for="LogEmail" class="form-control">Email</label>
+                    <input asp-for="LogEmail" class="form-control">
+                </div>
+                <span asp-validation-for="LogEmail" class="text-danger"></span>
+                <div class="form-group">
+                    <label for="LogPassword" class="form-control">Password</label>
+                    <input asp-for="LogPassword" class="form-control">
+                </div>
+                <span asp-validation-for="LogPassword" class="text-danger"></span>
+                <div>
+                    <input type="submit" value="Login" class="btn btn-dark btn-outline-info text-white">
+                </div>
+        </form>
+    </div>
+</div>
